@@ -3,6 +3,8 @@
 Program to build and check truth tables in propositional logic. 
 You can fill the cells in the table and then validate.
 
+It can be accessed at: https://fersoler.github.io/TruthTables/
+
 Syntax of the operators according to precedence order:
 * Atoms are any combination of lowercase letters and digits, except the 'v', which is used for disjunction
 * Negation is the dash '-'
