@@ -1,0 +1,69 @@
+<html>
+  <head>
+    <title>Truth Tables</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    
+    <script type="text/javascript" src="formulas.js"></script>
+    <script type="text/javascript" src="parser.js"></script>
+    <script type="text/javascript" src="utilities.js"></script>
+    <script type="text/javascript" src="proplogic.js"></script>
+
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+   
+
+  
+  </head>
+
+  <body onload="javascript:readFml('p v q -> (-p -> -p & q)');MathJax.typeset()">
+
+    <h2>Truth Tables</h2>
+    
+    <div align="right">Developed by <a href="https://personal.us.es/fsoler/">Fernando Soler-Toscano</a>.</div>
+    <hr>
+
+    <a href="javascript:toggle();" id="displayText">Show info</a>
+<div id="toggleText" style="display: none;">
+    <p>Use this program to construct a truth table. You can fill the cells in the table and then validate. 
+    <p>Syntax of the operators according to precedence order:
+      <ul>	
+	<li><b>Atoms</b> are any combination of lowercase letters and digits, except the 'v', which is used for disjunction	  
+	<li><b>Negation</b> is the dash '-'	  
+	<li><b>Conjunction</b> is the ampersand '&amp;'	  
+	<li><b>Disjunction</b> is the letter 'v'	  
+	<li><b>Implication</b> is the dash followed by the grater than symbol '->'
+      </ul>
+      Precedence is the same that the above order. All operators are interpreted as right-associative. 
+      An example of the notation (left) and the obtained formula, with some irrelevant brackets (centre) and without them (right):
+      <center>
+      <table width="80%">
+	<tr>
+	  <td>p -> (q & -r v s -> m)</td><td></td>
+	  <td>$$p \to  \left( (q \wedge  \lnot r) \vee s \to m \right)$$</td>
+	  <td>$$p \to  \left( q \wedge  \lnot r \vee s \to m \right)$$</td>
+	</tr>
+      </table>
+      </center>    
+    </p>
+</div>
+<br><br>
+    
+    <input type="text" id="MathInput" value="p v q -> (-p -> -p & q)" size="50">
+    <input type="button" onclick="readFml(MathInput.value);MathJax.typeset()" value="Make Table" /><div id="valid"></div>
+    
+    <font color="red"><div id="warning"></div></font>
+
+    <p>
+      
+      <center>
+	<div id="MathOutput">
+	  ${}$
+	</div>
+      </center>
+      
+
+
+  </body>
+</html>
