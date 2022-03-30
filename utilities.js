@@ -237,7 +237,7 @@ function validateTable(){
 	inpValue = document.getElementById("s"+i).value;  // user value
 	if(inpValue=="" || inpValue!=solution[i]){ // compare to the actual
 	    // if fails, change color and increase counter
-	    document.getElementById("c"+i).bgColor="#FF0066";	    
+	    document.getElementById("c"+i).style="color:#FF0000;";	    
 	    errors++;
 	}
 	// writes the solution in any case
