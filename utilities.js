@@ -143,8 +143,8 @@ function print_table(arr){
 
     // CREATING OTHER ROWS
     var newRow;  // to write the HTML of the row
-    var n=0;     // number of the row, from 0 to 2^atoms-1
-    for(n=0;n<Math.pow(2,atoms);n++){
+    var n; // number of the row, from 2^atoms-1 to 0
+	for(n=Math.pow(2,atoms)-1;n>=0;n--){
 	newRow = "";
 	nBin = toBinary(n,atoms);  // binary representation
 	
